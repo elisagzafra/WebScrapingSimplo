@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="QnyQQReS0jDjZgXiKyh0yQ4y8Ujz5zjQ6UHLYG6I" name="csrf-token"/>
+  <link href="/assets/images/layout/favicon.png" rel="icon" type="image/png"/>
+  <title>
+   Lista de productos
+  </title>
+  <link href="/assets/css/animate-3.7.2/animate.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+  <link href="/css/app.css?id=2741928451b4d441b623" rel="stylesheet"/>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-71159224-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-71159224-1');
+  </script>
+ </head>
+ <body>
+  <div class="root-container" id="app">
+   <render-site-component>
+    <template v-slot:content="">
+     <div class="content-products-list">
+      <div class="main-wrapper main-wrapper--b">
+       <header class="main-header flex flex-column md:flex-row align-center relative fixed t-0 l-0 w-100 z-9 py-2 md:py-0" id="main-header">
+        <div class="container container--tendenzza-ecommerce h-100 flex relative align-center xxl:px-12 mb-3 md:mb-0 z-1">
+         <!-- BURGER MENU -->
+         <button @click="toggleMainNav()" class="main-nav-burger burger trigger-menu hidden md:flex xl:-ml-30 mr-4 xl:mr-25" id="trigger_main_nav">
+          <div class="burger-inner">
+           <span class="burger-inner-line bg-white">
+           </span>
+           <span class="burger-inner-line bg-white">
+           </span>
+           <span class="burger-inner-line bg-white">
+           </span>
+          </div>
+         </button>
+         <a class="header-logo block w-fit mr-5" href="/">
+          <img alt="" src="/assets/images/layout/logo-tendenzza-white.svg"/>
+         </a>
+         <div class="hidden md:block w-100">
+          <search-component class="mr-10" route="https://tendenzza.it/service/filters/search">
+          </search-component>
+         </div>
+         <div class="flex align-center ml-a">
+          <a class="link-icon block tx-14 tx-white flex-none mr-4 md:mr-6" href="/wishlist">
+           <img alt="" class="" src="/assets/images/helpers/icon-heart-white-outline.svg" width="19px"/>
+          </a>
+          <a class="link-icon block tx-14 tx-white flex-none mr-4 md:mr-6" href="/mi-perfil">
+           <img alt="" class="" src="/assets/images/helpers/icon-profile-white.svg" width="19px"/>
+          </a>
+          <mini-cart-component>
+          </mini-cart-component>
+         </div>
+        </div>
+        <div class="container container--tendenzza-ecommerce flex md:hidden">
+         <!-- BURGER MENU -->
+         <button @click="toggleMainNav()" class="main-nav-burger burger trigger-menu md:hidden mr-6" id="trigger_main_nav">
+          <div class="burger-inner">
+           <span class="burger-inner-line bg-white">
+           </span>
+           <span class="burger-inner-line bg-white">
+           </span>
+           <span class="burger-inner-line bg-white">
+           </span>
+          </div>
+         </button>
+         <search-component route="https://tendenzza.it/service/filters/search">
+         </search-component>
+        </div>
+       </header>
+       <nav :class="{ 'active' : mainNavActive }" class="main-nav fixed flex flex-column l-0 t-0 vh-100 relative z-10 py-4 pb-10">
+        <img alt="" class="block mx-a mb-20" src="/assets/images/layout/logo-tendenzza-square.svg" width="200px"/>
+        <img @click="toggleMainNav()" alt="" class="main-nav-close absolute t-0 r-0 cursor-pointer mt-3 mr-3" src="/assets/images/helpers/icon-times-dark.svg"/>
+        <ul class="main-nav-list spacing-0 bullet-none px-12 h-100 overflow-a">
+         <li class="main-nav-item">
+          <a class="main-nav-link" href="/">
+           Home
+          </a>
+         </li>
+         <li class="main-nav-item">
+          <a class="main-nav-link cursor-default">
+           Catálogo
+          </a>
+          <ul class="tx-darkgrey-2 tx-14 md:tx-16 pt-6 bullet-none">
+           <li class="mb-6">
+            <a class="catalog-link flex align-center hover:filter-red-1" href="https://tendenzza.it/productos/6">
+             <img alt="" class="mr-2" src="/assets/images/helpers/bullet-square-grey.svg" width="5px"/>
+             Pisos
+            </a>
+           </li>
+           <li class="mb-6">
+            <a class="catalog-link flex align-center hover:filter-red-1" href="https://tendenzza.it/productos/4">
+             <img alt="" class="mr-2" src="/assets/images/helpers/bullet-square-grey.svg" width="5px"/>
+             Muros
+            </a>
+           </li>
+           <li class="mb-6">
+            <a class="catalog-link flex align-center hover:filter-red-1" href="https://tendenzza.it/productos/2">
+             <img alt="" class="mr-2" src="/assets/images/helpers/bullet-square-grey.svg" width="5px"/>
+             Mallas
+            </a>
+           </li>
+           <li class="mb-6">
+            <a class="catalog-link flex align-center hover:filter-red-1 active" href="https://tendenzza.it/productos/1">
+             <img alt="" class="mr-2" src="/assets/images/helpers/bullet-square-grey.svg" width="5px"/>
+             Lavabos
+            </a>
+           </li>
+           <li class="mb-6">
+            <a class="catalog-link flex align-center hover:filter-red-1" href="https://tendenzza.it/productos/7">
+             <img alt="" class="mr-2" src="/assets/images/helpers/bullet-square-grey.svg" width="5px"/>
+             Sanitarios
+            </a>
+           </li>
+           <li class="mb-6">
+            <a class="catalog-link flex align-center hover:filter-red-1" href="https://tendenzza.it/productos/8">
+             <img alt="" class="mr-2" src="/assets/images/helpers/bullet-square-grey.svg" width="5px"/>
+             Refacciones
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="main-nav-item">
+          <a class="main-nav-link" href="/nosotros">
+           Nosotros
+          </a>
+         </li>
+         <li class="main-nav-item">
+          <a class="main-nav-link" href="/wishlist">
+           Mi wishlist
+          </a>
+         </li>
+         <li class="main-nav-item">
+          <a class="main-nav-link" href="https://tendenzza.it/autenticacion">
+           Iniciar sesión
+          </a>
+         </li>
+        </ul>
+       </nav>
+       <transition name="fade">
+        <div @click="toggleMainNav()" class="backdrop z-9 block" id="backdrop_main_nav" v-show="mainNavActive">
+        </div>
+       </transition>
+       <a class="quick-contact-wa flex justify-center align-center fixed b-0 r-0 bg-darkgreen-1 rounded-full mr-4 mb-8 lg:mr-8 z-10" href="https://api.whatsapp.com/send?phone=5213328329836&amp;text=%C2%A1Hola!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n." target="_blank">
+        <img alt="" class="icon-whatsapp mb-1" src="/assets/images/helpers/icon-wa-white.svg"/>
+       </a>
+       <div class="container container--tendenzza-ecommerce pt-12 xxl:pt-24">
+        <button class="btn btn--red btn--filters-products fixed b-0 r-0 mr-4 mb-19 shadow-2 z-4 lg:hidden" id="trigger_filters_products">
+         <img id="icon_filter_filter" src="/assets/images/helpers/icon-filters.svg" width="18px"/>
+         <img class="hidden" id="icon_filter_times" src="/assets/images/helpers/icon-times.svg" width="18px"/>
+        </button>
+        <catalog-component :category='{"id":1,"title":"Lavabos","description":"","image":"https:\/\/tendenzza.mx\/files\/families\/family_6141b183677ec.jpg","tags":"ovalin,Lavabo,Ba\u00f1o,Lavamanos","active":1,"status":"Activo","priority":3,"created_by_user_id":1,"updated_by_user_id":231,"deleted_by_user_id":null,"created_at":"2021-05-04T16:18:11.000000Z","updated_at":"2021-09-15T09:40:37.000000Z","deleted_at":null}' :category_default="1" :current_page="16" :last_page="18" :max_price="5626" :min_price="0" :products='[{"id":381,"slug":"monza-60x120-slim","sap_id":"PP6013S","category_id":1,"subcategory_id":null,"ecommerce_enable":1,"group_id":39,"sku":"PP6013S","hash":"62547ccd88814","active":0,"status":"Disponible","title":"MONZA 60X120 SLIM","description":"","size":"","format":"","color":null,"finished":null,"unit_type":"M2","meters_box":"1.44","price":"0.00","high_price":"0.00","price_discount":0,"price_expiration":"17-02-23","image":null,"priority":0,"tags":"","updated_at":"2022-11-08T23:07:32.000000Z","unit":"M2","brute_weight":"20.91","net_weight":"20.78","net_weight_unit":"KG","volume":"0.00","volume_unit":"","searchtext":"MONZA 60X120 SLIM PP6013S ","discount":"0","imageFront":"https:\/\/tendenzza.mx\/files\/products\/default.png","priceFront":"$ 0.00 MXN","titleFront":"Monza 60x120 slim","categorySlug":"pisos","family":1,"link":"https:\/\/tendenzza.it\/productos\/1\/monza-60x120-slim","category":{"id":1,"slug":"pisos","title":"Pisos","description":null,"active":1,"image":"cat_6008aad78a387.jpg","priority":6,"tags":"","imageFront":"https:\/\/tendenzza.mx\/files\/categories\/cat_6008aad78a387.jpg"}},{"id":382,"slug":"brezzi-60x120-s","sap_id":"PP605S","category_id":9,"subcategory_id":null,"ecommerce_enable":1,"group_id":39,"sku":"PP605S","hash":"62547cce39e07","active":1,"status":"Disponible","title":"BREZZI 60X120 S","description":"","size":"","format":"","color":null,"finished":null,"unit_type":"M2","meters_box":"2.16","price":"661.99","high_price":"0.00","price_discount":0,"price_expiration":"01-10-22","image":"pro_6290e4deb6b73.jpg","priority":0,"tags":"","updated_at":"2022-11-26T16:51:37.000000Z","unit":"M2","brute_weight":"20.91","net_weight":"20.78","net_weight_unit":"KG","volume":"0.00","volume_unit":"","searchtext":"BREZZI 60X120 S PP605S ","discount":"0","imageFront":"https:\/\/tendenzza.mx\/\/files\/products\/382-62547cce39e07\/pro_62d1b027115bd.jpg","priceFront":"$ 661.99 MXN","titleFront":"Brezzi 60x120 s","categorySlug":"muro","family":1,"link":"https:\/\/tendenzza.it\/productos\/1\/brezzi-60x120-s","category":{"id":9,"slug":"muro","title":"Muro","description":"","active":1,"image":null,"priority":8,"tags":"","imageFront":"https:\/\/tendenzza.mx\/files\/categories\/"}},{"id":327,"slug":"porto-nero-60x120","sap_id":"PP606","category_id":1,"subcategory_id":null,"ecommerce_enable":1,"group_id":39,"sku":"PP606","hash":"6239e889323af","active":1,"status":"Disponible","title":"PORTO NERO 60X120","description":"","size":"","format":"","color":null,"finished":null,"unit_type":"M2","meters_box":"1.44","price":"0.00","high_price":"0.00","price_discount":0,"price_expiration":"17-02-23","image":"pro_624221182b43a.jpg","priority":0,"tags":"PP606,PORTO NERO,PORTO,NERO,NEGRO,BRILLANTE","updated_at":"2022-11-08T23:07:33.000000Z","unit":"M2","brute_weight":"22.22","net_weight":"22.22","net_weight_unit":"KG","volume":"0.00","volume_unit":"","searchtext":"PORTO NERO 60X120 PP606 PP606 PORTO NERO PORTO NERO NEGRO BRILLANTE","discount":"0","imageFront":"https:\/\/tendenzza.mx\/\/files\/products\/327-6239e889323af\/pro_62a3b8d6b1d44.jpg","priceFront":"$ 0.00 MXN","titleFront":"Porto nero 60x120","categorySlug":"pisos","family":1,"link":"https:\/\/tendenzza.it\/productos\/1\/porto-nero-60x120","category":{"id":1,"slug":"pisos","title":"Pisos","description":null,"active":1,"image":"cat_6008aad78a387.jpg","priority":6,"tags":"","imageFront":"https:\/\/tendenzza.mx\/files\/categories\/cat_6008aad78a387.jpg"}},{"id":383,"slug":"forli-60120-slim","sap_id":"PP607S","category_id":1,"subcategory_id":null,"ecommerce_enable":1,"group_id":39,"sku":"PP607S","hash":"62547ccead280","active":1,"status":"Disponible","title":"FORLI 60*120 SLIM","description":"","size":"","format":"","color":null,"finished":null,"unit_type":"M2","meters_box":"2.16","price":"0.00","high_price":"0.00","price_discount":0,"price_expiration":"17-02-23","image":"pro_6290e2773a336.jpg","priority":0,"tags":"","updated_at":"2022-12-17T16:53:24.000000Z","unit":"M2","brute_weight":"20.91","net_weight":"20.78","net_weight_unit":"KG","volume":"0.00","volume_unit":"","searchtext":"FORLI 60*120 SLIM PP607S ","discount":"0","imageFront":"https:\/\/tendenzza.mx\/\/files\/products\/383-62547ccead280\/pro_6290e27aeb5ef.jpg","priceFront":"$ 0.00 MXN","titleFront":"Forli 60*120 slim","categorySlug":"pisos","family":1,"link":"https:\/\/tendenzza.it\/productos\/1\/forli-60120-slim","category":{"id":1,"slug":"pisos","title":"Pisos","description":null,"active":1,"image":"cat_6008aad78a387.jpg","priority":6,"tags":"","imageFront":"https:\/\/tendenzza.mx\/files\/categories\/cat_6008aad78a387.jpg"}},{"id":384,"slug":"onice-60120-slim","sap_id":"PP612S","category_id":1,"subcategory_id":null,"ecommerce_enable":1,"group_id":39,"sku":"PP612S","hash":"62547ccf5da6a","active":1,"status":"Disponible","title":"ONICE 60*120 SLIM","description":"","size":"","format":"120x60","color":"Blanco","finished":"Brillante","unit_type":"M2","meters_box":"2.16","price":"661.99","high_price":"0.00","price_discount":0,"price_expiration":"17-02-23","image":"pro_6290e04a83678.jpg","priority":0,"tags":"BRILLANTE","updated_at":"2023-01-09T18:09:00.000000Z","unit":"M2","brute_weight":"20.91","net_weight":"20.78","net_weight_unit":"KG","volume":"0.00","volume_unit":"","searchtext":"ONICE 60*120 SLIM PP612S BRILLANTE","discount":"0","imageFront":"https:\/\/tendenzza.mx\/\/files\/products\/384-62547ccf5da6a\/pro_63bc572f99d20.jpg","priceFront":"$ 661.99 MXN","titleFront":"Onice 60*120 slim","categorySlug":"pisos","family":1,"link":"https:\/\/tendenzza.it\/productos\/1\/onice-60120-slim","category":{"id":1,"slug":"pisos","title":"Pisos","description":null,"active":1,"image":"cat_6008aad78a387.jpg","priority":6,"tags":"","imageFront":"https:\/\/tendenzza.mx\/files\/categories\/cat_6008aad78a387.jpg"}},{"id":385,"slug":"monza-60x120-slim-2","sap_id":"PP613S","category_id":1,"subcategory_id":null,"ecommerce_enable":1,"group_id":39,"sku":"PP613S","hash":"62547ccf89190","active":1,"status":"Disponible","title":"MONZA 60X120 SLIM","description":"","size":"","format":"","color":null,"finished":null,"unit_type":"M2","meters_box":"2.16","price":"714.99","high_price":"0.00","price_discount":0,"price_expiration":"01-10-22","image":"pro_6290dfabb8826.jpg","priority":0,"tags":"piso,muro,ba\u00f1o","updated_at":"2022-11-26T16:52:21.000000Z","unit":"M2","brute_weight":"20.91","net_weight":"20.78","net_weight_unit":"KG","volume":"0.00","volume_unit":"","searchtext":"MONZA 60X120 SLIM PP613S piso muro ba\u00f1o","discount":"0","imageFront":"https:\/\/tendenzza.mx\/\/files\/products\/385-62547ccf89190\/pro_6290dfb4b054b.jpg","priceFront":"$ 714.99 MXN","titleFront":"Monza 60x120 slim","categorySlug":"pisos","family":1,"link":"https:\/\/tendenzza.it\/productos\/1\/monza-60x120-slim-2","category":{"id":1,"slug":"pisos","title":"Pisos","description":null,"active":1,"image":"cat_6008aad78a387.jpg","priority":6,"tags":"","imageFront":"https:\/\/tendenzza.mx\/files\/categories\/cat_6008aad78a387.jpg"}},{"id":386,"slug":"bardi-60x120-slim","sap_id":"PP614S","category_id":1,"subcategory_id":null,"ecommerce_enable":1,"group_id":39,"sku":"PP614S","hash":"62547ccfaab26","active":1,"status":"Disponible","title":"BARDI 60X120 SLIM","description":"","size":"","format":"","color":null,"finished":null,"unit_type":"M2","meters_box":"2.16","price":"0.00","high_price":"0.00","price_discount":0,"price_expiration":"17-02-23","image":"pro_6290de8ecd7b0.jpg","priority":0,"tags":"","updated_at":"2022-11-26T15:44:08.000000Z","unit":"M2","brute_weight":"20.91","net_weight":"20.78","net_weight_unit":"KG","volume":"0.00","volume_unit":"","searchtext":"BARDI 60X120 SLIM PP614S ","discount":"0","imageFront":"https:\/\/tendenzza.mx\/\/files\/products\/386-62547ccfaab26\/pro_6290df3a96d37.jpg","priceFront":"$ 0.00 MXN","titleFront":"Bardi 60x120 slim","categorySlug":"pisos","family":1,"link":"https:\/\/tendenzza.it\/productos\/1\/bardi-60x120-slim","category":{"id":1,"slug":"pisos","title":"Pisos","description":null,"active":1,"image":"cat_6008aad78a387.jpg","priority":6,"tags":"","imageFront":"https:\/\/tendenzza.mx\/files\/categories\/cat_6008aad78a387.jpg"}},{"id":610,"slug":"marota-60x120-slim","sap_id":"PP621S","category_id":1,"subcategory_id":null,"ecommerce_enable":1,"group_id":39,"sku":"PP621S","hash":"632259db1478e","active":1,"status":"Disponible","title":"MAROTA 60X120 SLIM","description":"","size":"","format":"120x60","color":"Blanco","finished":"Brillante","unit_type":"M2","meters_box":"1.44","price":"0.00","high_price":"0.00","price_discount":0,"price_expiration":"17-02-23","image":"pro_636be00aa488b.png","priority":0,"tags":"","updated_at":"2022-11-09T17:16:16.000000Z","unit":"M2","brute_weight":"20.28","net_weight":"20.28","net_weight_unit":"KG","volume":"0.00","volume_unit":"","searchtext":"MAROTA 60X120 SLIM PP621S ","discount":"0","imageFront":"https:\/\/tendenzza.mx\/\/files\/products\/610-632259db1478e\/pro_636bdffd52b52.png","priceFront":"$ 0.00 MXN","titleFront":"Marota 60x120 slim","categorySlug":"pisos","family":1,"link":"https:\/\/tendenzza.it\/productos\/1\/marota-60x120-slim","category":{"id":1,"slug":"pisos","title":"Pisos","description":null,"active":1,"image":"cat_6008aad78a387.jpg","priority":6,"tags":"","imageFront":"https:\/\/tendenzza.mx\/files\/categories\/cat_6008aad78a387.jpg"}},{"id":387,"slug":"marotta-80x160","sap_id":"PP801","category_id":1,"subcategory_id":null,"ecommerce_enable":1,"group_id":39,"sku":"PP801","hash":"62547cd016a79","active":1,"status":"Disponible","title":"MAROTTA 80X160","description":"","size":"","format":"","color":null,"finished":null,"unit_type":"M2","meters_box":"2.56","price":"0.00","high_price":"0.00","price_discount":0,"price_expiration":"17-02-23","image":"pro_6291461753c4a.jpg","priority":0,"tags":"","updated_at":"2022-11-28T19:35:43.000000Z","unit":"M2","brute_weight":"20.58","net_weight":"20.58","net_weight_unit":"KG","volume":"0.00","volume_unit":"","searchtext":"MAROTTA 80X160 PP801 ","discount":"0","imageFront":"https:\/\/tendenzza.mx\/\/files\/products\/387-62547cd016a79\/pro_6291461d7efeb.jpg","priceFront":"$ 0.00 MXN","titleFront":"Marotta 80x160","categorySlug":"pisos","family":1,"link":"https:\/\/tendenzza.it\/productos\/1\/marotta-80x160","category":{"id":1,"slug":"pisos","title":"Pisos","description":null,"active":1,"image":"cat_6008aad78a387.jpg","priority":6,"tags":"","imageFront":"https:\/\/tendenzza.mx\/files\/categories\/cat_6008aad78a387.jpg"}}]' :routes='{"page_products_details":"https:\/\/tendenzza.it\/productos\/1\/product_slug"}'>
+        </catalog-component>
+       </div>
+       <footer class="main-footer relative py-12 overflow-hiden">
+        <img alt="" class="absolute t-0 r-0 h-100 hidden lg:block" src="/assets/images/layout/footer-decore.svg"/>
+        <div class="container container--tendenzza-ecommerce">
+         <div class="gs:grid mb-14 md:mb-0">
+          <div class="col flex flex-column justify-between mb-10 lg:mb-0">
+           <div class="gs:grid mb-10 lg:mb-0">
+            <div class="md:col-9 xxl:px-3">
+             <a class="block w-fit mb-12 md:mb-25 xxl:mb-27" href="/">
+              <img alt="" class="footer-logo" src="/assets/images/layout/logo-tendenzza-white.svg"/>
+             </a>
+             <div class="hidden md:block">
+              <div class="wrapper-icons-social-media flex flex-wrap">
+               <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://www.instagram.com/tendenzza_italia/" target="_blank">
+                <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-ig.svg" width="16px"/>
+               </a>
+               <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://api.whatsapp.com/send?phone=5213327031631&amp;text=%C2%A1Hola!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n." target="_blank">
+                <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-wa.svg" width="16px"/>
+               </a>
+               <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://www.facebook.com/tendenzza.it/" target="_blank">
+                <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-fbk-circle.svg" width="16px"/>
+               </a>
+               <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://www.youtube.com/channel/UCDqOrrO6HZkQi_1uCEUnoqg" target="_blank">
+                <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-youtube.svg" width="17px"/>
+               </a>
+               <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://www.pinterest.com.mx/tendenzzaitalia/" target="_blank">
+                <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-pinterest.svg" width="18px"/>
+               </a>
+               <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://www.linkedin.com/company/tendenzza-italia" target="_blank">
+                <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-linkedin.svg" width="14px"/>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="col-12 md:col ml-a xl:ml-0">
+             <p class="footer-nav-title">
+              Catálogo
+             </p>
+             <ul class="footer-nav-list spacing-0 bullet-none tx-12 mb-8">
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="https://tendenzza.it/productos/6">
+                Pisos
+               </a>
+              </li>
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="https://tendenzza.it/productos/4">
+                Muros
+               </a>
+              </li>
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="https://tendenzza.it/productos/2">
+                Mallas
+               </a>
+              </li>
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="https://tendenzza.it/productos/1">
+                Lavabos
+               </a>
+              </li>
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="https://tendenzza.it/productos/7">
+                Sanitarios
+               </a>
+              </li>
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="https://tendenzza.it/productos/8">
+                Refacciones
+               </a>
+              </li>
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="">
+                Descuentos
+               </a>
+              </li>
+             </ul>
+             <p class="footer-nav-title">
+              Legales
+             </p>
+             <ul class="footer-nav-list spacing-0 bullet-none tx-12 mb-8">
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="/avisos-de-privacidad" target="_blank">
+                Aviso de privacidad
+               </a>
+              </li>
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="/terminos-legales" target="_blank">
+                Términos legales
+               </a>
+              </li>
+             </ul>
+            </div>
+            <div class="col-12 md:col">
+             <p class="footer-nav-title">
+              Acerca
+             </p>
+             <ul class="footer-nav-list spacing-0 bullet-none tx-12 mb-8">
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="/nosotros">
+                Nosotros
+               </a>
+              </li>
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="/assets/docs/catalogo.pdf" target="_blank">
+                Descarga el catálogo
+               </a>
+              </li>
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="/assets/docs/guia_instalacion.pdf" target="_blank">
+                Guía de instalación
+               </a>
+              </li>
+             </ul>
+             <div class="item hidden lg:block">
+              <p class="ff-helvetica-neue-co tx-14 tx-white tx-uppercase md:mb-6">
+               <img alt="" class="mr-3 -mt-1" src="/assets/images/helpers/icon-pin-map-white.svg" width="11px"/>
+               ITALIA
+              </p>
+              <p class="tx-12 line-h-loose m-0" style="color: #8D8D8D;">
+               Vía castracani No.2
+               <br/>
+               CP 455042, Forte, dei Marmi LU, Italia
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="gs:grid">
+            <div class="col">
+             <a class="tx-14 md:tx-16 xxl:tx-20 w-fit tx-white" href="tel:+523338970014">
+              <img alt="" class="mr-2 -mt-1" src="/assets/images/helpers/icon-telephone-white.svg" width="16px"/>
+              +52 33 38970014
+             </a>
+             <span class="tx-11px inline-block mb-0 sm:ml-8 mt-3 sm:mt-0" style="color: #8D8D8D;">
+              Todos los Derechos Reservados, Tendenzza 2018 ®
+             </span>
+            </div>
+           </div>
+          </div>
+          <div class="lg:col-9">
+           <div class="locations-grid">
+            <div class="item">
+             <p class="ff-helvetica-neue-co tx-14 tx-white tx-uppercase md:mb-6">
+              <img alt="" class="mr-3 -mt-1" src="/assets/images/helpers/icon-pin-map-white.svg" width="11px"/>
+              GUADALAJARA
+             </p>
+             <p class="tx-12 line-h-loose m-0" style="color: #8D8D8D;">
+              Camino San Ángel #1100-A
+              <br/>
+              Col. Tesistán, C.P.45200 Zapopan, Jalisco.
+              <br/>
+              <strong>
+               Teléfono:
+              </strong>
+              +52 (33) 3897 0014
+             </p>
+            </div>
+            <div class="item">
+             <p class="ff-helvetica-neue-co tx-14 tx-white tx-uppercase md:mb-6">
+              <img alt="" class="mr-3 -mt-1" src="/assets/images/helpers/icon-pin-map-white.svg" width="11px"/>
+              GDL SHOWROOM
+             </p>
+             <p class="tx-12 line-h-loose m-0" style="color: #8D8D8D;">
+              Mariano Otero #407
+              <br/>
+              Col. Moderna, Guadalajara Jal, Frente la Glorieta Niños Heroes.
+              <br/>
+              <strong>
+               Teléfono:
+              </strong>
+              +52 (33) 3647 8208
+             </p>
+            </div>
+            <div class="item">
+             <p class="ff-helvetica-neue-co tx-14 tx-white tx-uppercase md:mb-6">
+              <img alt="" class="mr-3 -mt-1" src="/assets/images/helpers/icon-pin-map-white.svg" width="11px"/>
+              CDMX
+             </p>
+             <p class="tx-12 line-h-loose m-0" style="color: #8D8D8D;">
+              Benito Juarez #1
+              <br/>
+              Col. Urbana Ixhuatepec, C.P. 55349 Ecatepec de Morelos, Edo. de México
+              <br/>
+              <strong>
+               Teléfono:
+              </strong>
+              (55) 5701 5780
+             </p>
+            </div>
+            <div class="item">
+             <p class="ff-helvetica-neue-co tx-14 tx-white tx-uppercase md:mb-6">
+              <img alt="" class="mr-3 -mt-1" src="/assets/images/helpers/icon-pin-map-white.svg" width="11px"/>
+              MONTERREY
+             </p>
+             <p class="tx-12 line-h-loose m-0" style="color: #8D8D8D;">
+              San Javier #701.
+              <br/>
+              Col. Misión San Pablo, CP. 66643 Apodaca, Nuevo León
+              <br/>
+              <strong>
+               Teléfono:
+              </strong>
+              +52 (81) 1088 0536
+             </p>
+            </div>
+            <div class="item hidden lg:block">
+            </div>
+            <div class="item lg:hidden">
+             <p class="ff-helvetica-neue-co tx-14 tx-white tx-uppercase md:mb-6">
+              <img alt="" class="mr-3 -mt-1" src="/assets/images/helpers/icon-pin-map-white.svg" width="11px"/>
+              ITALIA
+             </p>
+             <p class="tx-12 line-h-loose m-0" style="color: #8D8D8D;">
+              Vía castracani No.2
+              <br/>
+              CP 455042, Forte, dei Marmi LU, Italia
+             </p>
+            </div>
+            <div class="item flex align-end">
+             <div class="flex flex-none">
+              <img alt="ícono mastercard" class="mr-5" src="/assets/images/helpers/pay_methods/icon-mastercard-white.svg" width="37px"/>
+              <img alt="ícono mastercard" class="mr-5" src="/assets/images/helpers/pay_methods/icon-visa-white.svg" width="44px"/>
+              <img alt="ícono mastercard" src="/assets/images/helpers/pay_methods/icon-american-express-white.svg" width="28px"/>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="md:hidden">
+          <div class="wrapper-icons-social-media flex flex-wrap">
+           <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://www.instagram.com/tendenzza_italia/" target="_blank">
+            <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-ig.svg" width="16px"/>
+           </a>
+           <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://api.whatsapp.com/send?phone=5213327031631&amp;text=%C2%A1Hola!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n." target="_blank">
+            <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-wa.svg" width="16px"/>
+           </a>
+           <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://www.facebook.com/tendenzza.it/" target="_blank">
+            <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-fbk-circle.svg" width="16px"/>
+           </a>
+           <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://www.youtube.com/channel/UCDqOrrO6HZkQi_1uCEUnoqg" target="_blank">
+            <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-youtube.svg" width="17px"/>
+           </a>
+           <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://www.pinterest.com.mx/tendenzzaitalia/" target="_blank">
+            <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-pinterest.svg" width="18px"/>
+           </a>
+           <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://www.linkedin.com/company/tendenzza-italia" target="_blank">
+            <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-linkedin.svg" width="14px"/>
+           </a>
+          </div>
+         </div>
+        </div>
+       </footer>
+      </div>
+     </div>
+    </template>
+   </render-site-component>
+  </div>
+  <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9v-mGvK0y_FDUf3ag9gNbVJ0yW91Ojoc&amp;libraries=places">
+  </script>
+  <script src="/js/app.js?id=1c649a88aefea350a3b8">
+  </script>
+  <script src="/assets/js/wow-1.1.2/wow.min.js">
+  </script>
+  <script>
+   wow = new WOW(
+            {
+                boxClass:     'wow',      // default
+                animateClass: 'animated', // default
+                offset:       0,          // default
+                mobile:       false,       // default
+                live:         true        // default
+            }
+        )
+        wow.init();
+  </script>
+ </body>
+</html>

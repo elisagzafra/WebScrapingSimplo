@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="Ncp6hhUzxNO0tZWxlA1Z9Wx9303dkFhjzDhjQZSn" name="csrf-token"/>
+  <link href="/assets/images/layout/favicon.png" rel="icon" type="image/png"/>
+  <title>
+   Lista de productos
+  </title>
+  <link href="/assets/css/animate-3.7.2/animate.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+  <link href="/css/app.css?id=2741928451b4d441b623" rel="stylesheet"/>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-71159224-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-71159224-1');
+  </script>
+ </head>
+ <body>
+  <div class="root-container" id="app">
+   <render-site-component>
+    <template v-slot:content="">
+     <div class="content-products-list">
+      <div class="main-wrapper main-wrapper--b">
+       <header class="main-header flex flex-column md:flex-row align-center relative fixed t-0 l-0 w-100 z-9 py-2 md:py-0" id="main-header">
+        <div class="container container--tendenzza-ecommerce h-100 flex relative align-center xxl:px-12 mb-3 md:mb-0 z-1">
+         <!-- BURGER MENU -->
+         <button @click="toggleMainNav()" class="main-nav-burger burger trigger-menu hidden md:flex xl:-ml-30 mr-4 xl:mr-25" id="trigger_main_nav">
+          <div class="burger-inner">
+           <span class="burger-inner-line bg-white">
+           </span>
+           <span class="burger-inner-line bg-white">
+           </span>
+           <span class="burger-inner-line bg-white">
+           </span>
+          </div>
+         </button>
+         <a class="header-logo block w-fit mr-5" href="/">
+          <img alt="" src="/assets/images/layout/logo-tendenzza-white.svg"/>
+         </a>
+         <div class="hidden md:block w-100">
+          <search-component class="mr-10" route="https://tendenzza.it/service/filters/search">
+          </search-component>
+         </div>
+         <div class="flex align-center ml-a">
+          <a class="link-icon block tx-14 tx-white flex-none mr-4 md:mr-6" href="/wishlist">
+           <img alt="" class="" src="/assets/images/helpers/icon-heart-white-outline.svg" width="19px"/>
+          </a>
+          <a class="link-icon block tx-14 tx-white flex-none mr-4 md:mr-6" href="/mi-perfil">
+           <img alt="" class="" src="/assets/images/helpers/icon-profile-white.svg" width="19px"/>
+          </a>
+          <mini-cart-component>
+          </mini-cart-component>
+         </div>
+        </div>
+        <div class="container container--tendenzza-ecommerce flex md:hidden">
+         <!-- BURGER MENU -->
+         <button @click="toggleMainNav()" class="main-nav-burger burger trigger-menu md:hidden mr-6" id="trigger_main_nav">
+          <div class="burger-inner">
+           <span class="burger-inner-line bg-white">
+           </span>
+           <span class="burger-inner-line bg-white">
+           </span>
+           <span class="burger-inner-line bg-white">
+           </span>
+          </div>
+         </button>
+         <search-component route="https://tendenzza.it/service/filters/search">
+         </search-component>
+        </div>
+       </header>
+       <nav :class="{ 'active' : mainNavActive }" class="main-nav fixed flex flex-column l-0 t-0 vh-100 relative z-10 py-4 pb-10">
+        <img alt="" class="block mx-a mb-20" src="/assets/images/layout/logo-tendenzza-square.svg" width="200px"/>
+        <img @click="toggleMainNav()" alt="" class="main-nav-close absolute t-0 r-0 cursor-pointer mt-3 mr-3" src="/assets/images/helpers/icon-times-dark.svg"/>
+        <ul class="main-nav-list spacing-0 bullet-none px-12 h-100 overflow-a">
+         <li class="main-nav-item">
+          <a class="main-nav-link" href="/">
+           Home
+          </a>
+         </li>
+         <li class="main-nav-item">
+          <a class="main-nav-link cursor-default">
+           Catálogo
+          </a>
+          <ul class="tx-darkgrey-2 tx-14 md:tx-16 pt-6 bullet-none">
+           <li class="mb-6">
+            <a class="catalog-link flex align-center hover:filter-red-1" href="https://tendenzza.it/productos/6">
+             <img alt="" class="mr-2" src="/assets/images/helpers/bullet-square-grey.svg" width="5px"/>
+             Pisos
+            </a>
+           </li>
+           <li class="mb-6">
+            <a class="catalog-link flex align-center hover:filter-red-1" href="https://tendenzza.it/productos/4">
+             <img alt="" class="mr-2" src="/assets/images/helpers/bullet-square-grey.svg" width="5px"/>
+             Muros
+            </a>
+           </li>
+           <li class="mb-6">
+            <a class="catalog-link flex align-center hover:filter-red-1" href="https://tendenzza.it/productos/2">
+             <img alt="" class="mr-2" src="/assets/images/helpers/bullet-square-grey.svg" width="5px"/>
+             Mallas
+            </a>
+           </li>
+           <li class="mb-6">
+            <a class="catalog-link flex align-center hover:filter-red-1 active" href="https://tendenzza.it/productos/1">
+             <img alt="" class="mr-2" src="/assets/images/helpers/bullet-square-grey.svg" width="5px"/>
+             Lavabos
+            </a>
+           </li>
+           <li class="mb-6">
+            <a class="catalog-link flex align-center hover:filter-red-1" href="https://tendenzza.it/productos/7">
+             <img alt="" class="mr-2" src="/assets/images/helpers/bullet-square-grey.svg" width="5px"/>
+             Sanitarios
+            </a>
+           </li>
+           <li class="mb-6">
+            <a class="catalog-link flex align-center hover:filter-red-1" href="https://tendenzza.it/productos/8">
+             <img alt="" class="mr-2" src="/assets/images/helpers/bullet-square-grey.svg" width="5px"/>
+             Refacciones
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="main-nav-item">
+          <a class="main-nav-link" href="/nosotros">
+           Nosotros
+          </a>
+         </li>
+         <li class="main-nav-item">
+          <a class="main-nav-link" href="/wishlist">
+           Mi wishlist
+          </a>
+         </li>
+         <li class="main-nav-item">
+          <a class="main-nav-link" href="https://tendenzza.it/autenticacion">
+           Iniciar sesión
+          </a>
+         </li>
+        </ul>
+       </nav>
+       <transition name="fade">
+        <div @click="toggleMainNav()" class="backdrop z-9 block" id="backdrop_main_nav" v-show="mainNavActive">
+        </div>
+       </transition>
+       <a class="quick-contact-wa flex justify-center align-center fixed b-0 r-0 bg-darkgreen-1 rounded-full mr-4 mb-8 lg:mr-8 z-10" href="https://api.whatsapp.com/send?phone=5213328329836&amp;text=%C2%A1Hola!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n." target="_blank">
+        <img alt="" class="icon-whatsapp mb-1" src="/assets/images/helpers/icon-wa-white.svg"/>
+       </a>
+       <div class="container container--tendenzza-ecommerce pt-12 xxl:pt-24">
+        <button class="btn btn--red btn--filters-products fixed b-0 r-0 mr-4 mb-19 shadow-2 z-4 lg:hidden" id="trigger_filters_products">
+         <img id="icon_filter_filter" src="/assets/images/helpers/icon-filters.svg" width="18px"/>
+         <img class="hidden" id="icon_filter_times" src="/assets/images/helpers/icon-times.svg" width="18px"/>
+        </button>
+        <catalog-component :category='{"id":1,"title":"Lavabos","description":"","image":"https:\/\/tendenzza.mx\/files\/families\/family_6141b183677ec.jpg","tags":"ovalin,Lavabo,Ba\u00f1o,Lavamanos","active":1,"status":"Activo","priority":3,"created_by_user_id":1,"updated_by_user_id":231,"deleted_by_user_id":null,"created_at":"2021-05-04T16:18:11.000000Z","updated_at":"2021-09-15T09:40:37.000000Z","deleted_at":null}' :category_default="1" :current_page="5" :last_page="18" :max_price="5626" :min_price="0" :products='[{"id":170,"slug":"canova-ross-30x60-2","sap_id":"PA014A","category_id":9,"subcategory_id":null,"ecommerce_enable":1,"group_id":38,"sku":"PA014A","hash":"5df11bab7478b","active":1,"status":"Disponible","title":"CANOVA ROSS 30X60","description":"","size":"","format":"","color":null,"finished":null,"unit_type":"M2","meters_box":"1.44","price":"1164.03","high_price":"0.00","price_discount":0,"price_expiration":"17-02-23","image":"pro_5f7ba0fc61cc5.jpg","priority":0,"tags":"Azulejo","updated_at":"2022-11-16T14:33:42.000000Z","unit":"M2","brute_weight":"15.87","net_weight":"15.87","net_weight_unit":"KG","volume":"0.00","volume_unit":"","searchtext":"CANOVA ROSS 30X60 PA014AAzulejo  Muro","discount":"0","imageFront":"https:\/\/tendenzza.mx\/files\/products\/default.png","priceFront":"$ 1,164.03 MXN","titleFront":"Canova ross 30x60","categorySlug":"muro","family":1,"link":"https:\/\/tendenzza.it\/productos\/1\/canova-ross-30x60-2","category":{"id":9,"slug":"muro","title":"Muro","description":"","active":1,"image":null,"priority":8,"tags":"","imageFront":"https:\/\/tendenzza.mx\/files\/categories\/"}},{"id":173,"slug":"canova-han-2","sap_id":"PA015A","category_id":9,"subcategory_id":null,"ecommerce_enable":1,"group_id":38,"sku":"PA015A","hash":"5df11babdd0eb","active":1,"status":"Disponible","title":"CANOVA HAN","description":"","size":"","format":"30x60","color":null,"finished":null,"unit_type":"M2","meters_box":"1.44","price":"0.00","high_price":"0.00","price_discount":0,"price_expiration":"17-02-23","image":"pro_60383cff30268.jpg","priority":0,"tags":"Azulejo","updated_at":"2022-11-16T14:33:42.000000Z","unit":"M2","brute_weight":"17.42","net_weight":"17.42","net_weight_unit":"KG","volume":"0.00","volume_unit":"","searchtext":"CANOVA HAN PA015A Azulejo","discount":"0","imageFront":"https:\/\/tendenzza.mx\/\/files\/products\/173-5df11babdd0eb\/pro_60383d3fb1b43.jpg","priceFront":"$ 0.00 MXN","titleFront":"Canova han","categorySlug":"muro","family":1,"link":"https:\/\/tendenzza.it\/productos\/1\/canova-han-2","category":{"id":9,"slug":"muro","title":"Muro","description":"","active":1,"image":null,"priority":8,"tags":"","imageFront":"https:\/\/tendenzza.mx\/files\/categories\/"}},{"id":176,"slug":"calacatta-oro-30x80","sap_id":"PA016","category_id":9,"subcategory_id":null,"ecommerce_enable":1,"group_id":38,"sku":"PA016","hash":"5df11bac6ed2b","active":1,"status":"Disponible","title":"CALACATTA ORO 30x80","description":"PASTA BLANCA, RECTIFICADA","size":"","format":"30x80","color":null,"finished":null,"unit_type":"M2","meters_box":"0.96","price":"0.00","high_price":"0.00","price_discount":0,"price_expiration":"17-02-23","image":"pro_60afd4ebc230c.jpg","priority":0,"tags":"Azulejo","updated_at":"2022-11-16T14:33:42.000000Z","unit":"M2","brute_weight":"17.42","net_weight":"16.79","net_weight_unit":"KG","volume":"0.00","volume_unit":"","searchtext":"CALACATTA ORO 30x80 PA016 Azulejo","discount":"0","imageFront":"https:\/\/tendenzza.mx\/\/files\/products\/176-5df11bac6ed2b\/pro_60afd4e80ac28.jpg","priceFront":"$ 0.00 MXN","titleFront":"Calacatta oro 30x80","categorySlug":"muro","family":4,"link":"https:\/\/tendenzza.it\/productos\/4\/calacatta-oro-30x80","category":{"id":9,"slug":"muro","title":"Muro","description":"","active":1,"image":null,"priority":8,"tags":"","imageFront":"https:\/\/tendenzza.mx\/files\/categories\/"},"families":[{"id":4,"title":"Muros","description":"","image":"https:\/\/tendenzza.mx\/files\/families\/family_6141af80eaacd.jpg","tags":"Muro,Azulejo,Moderno,Pared","active":1,"status":"Activo","priority":7,"created_by_user_id":1,"updated_by_user_id":231,"deleted_by_user_id":null,"created_at":"2021-05-04T16:18:26.000000Z","updated_at":"2021-09-15T09:34:44.000000Z","deleted_at":null,"pivot":{"product_id":176,"family_id":4}}]},{"id":183,"slug":"calacatta-grigio-30x80","sap_id":"PA017","category_id":9,"subcategory_id":null,"ecommerce_enable":1,"group_id":38,"sku":"PA017","hash":"5df11badc21cf","active":1,"status":"Disponible","title":"CALACATTA GRIGIO 30X80","description":"PASTA BLANCA, RECTIFICADA","size":"","format":"30x80","color":null,"finished":null,"unit_type":"M2","meters_box":"0.96","price":"0.00","high_price":"0.00","price_discount":0,"price_expiration":"17-02-23","image":"pro_60afd4fa5d03f.jpg","priority":0,"tags":"Azulejo","updated_at":"2022-11-16T14:33:43.000000Z","unit":"M2","brute_weight":"17.20","net_weight":"16.65","net_weight_unit":"KG","volume":"0.00","volume_unit":"","searchtext":"CALACATTA GRIGIO 30X80 PA017 Azulejo","discount":"0","imageFront":"https:\/\/tendenzza.mx\/\/files\/products\/183-5df11badc21cf\/pro_60afd4fc09c49.jpg","priceFront":"$ 0.00 MXN","titleFront":"Calacatta grigio 30x80","categorySlug":"muro","family":4,"link":"https:\/\/tendenzza.it\/productos\/4\/calacatta-grigio-30x80","category":{"id":9,"slug":"muro","title":"Muro","description":"","active":1,"image":null,"priority":8,"tags":"","imageFront":"https:\/\/tendenzza.mx\/files\/categories\/"},"families":[{"id":4,"title":"Muros","description":"","image":"https:\/\/tendenzza.mx\/files\/families\/family_6141af80eaacd.jpg","tags":"Muro,Azulejo,Moderno,Pared","active":1,"status":"Activo","priority":7,"created_by_user_id":1,"updated_by_user_id":231,"deleted_by_user_id":null,"created_at":"2021-05-04T16:18:26.000000Z","updated_at":"2021-09-15T09:34:44.000000Z","deleted_at":null,"pivot":{"product_id":183,"family_id":4}}]},{"id":177,"slug":"calacatta-sollievo-30x80","sap_id":"PA018","category_id":9,"subcategory_id":null,"ecommerce_enable":1,"group_id":38,"sku":"PA018","hash":"5df11bac8f67f","active":1,"status":"Disponible","title":"CALACATTA SOLLIEVO 30X80","description":"PASTA BLANCA, 3D, RECTIFICADA","size":"","format":"30x80","color":null,"finished":null,"unit_type":"M2","meters_box":"0.96","price":"0.00","high_price":"0.00","price_discount":0,"price_expiration":"17-02-23","image":"pro_60afd51149dd0.jpg","priority":0,"tags":"Azulejo","updated_at":"2022-11-16T14:33:43.000000Z","unit":"M2","brute_weight":"17.45","net_weight":"16.70","net_weight_unit":"KG","volume":"0.00","volume_unit":"","searchtext":"CALACATTA SOLLIEVO 30X80 PA018 Azulejo","discount":"0","imageFront":"https:\/\/tendenzza.mx\/\/files\/products\/177-5df11bac8f67f\/pro_60afd51278d91.jpg","priceFront":"$ 0.00 MXN","titleFront":"Calacatta sollievo 30x80","categorySlug":"muro","family":4,"link":"https:\/\/tendenzza.it\/productos\/4\/calacatta-sollievo-30x80","category":{"id":9,"slug":"muro","title":"Muro","description":"","active":1,"image":null,"priority":8,"tags":"","imageFront":"https:\/\/tendenzza.mx\/files\/categories\/"},"families":[{"id":4,"title":"Muros","description":"","image":"https:\/\/tendenzza.mx\/files\/families\/family_6141af80eaacd.jpg","tags":"Muro,Azulejo,Moderno,Pared","active":1,"status":"Activo","priority":7,"created_by_user_id":1,"updated_by_user_id":231,"deleted_by_user_id":null,"created_at":"2021-05-04T16:18:26.000000Z","updated_at":"2021-09-15T09:34:44.000000Z","deleted_at":null,"pivot":{"product_id":177,"family_id":4}}]},{"id":193,"slug":"muro-gabbana-30-x-60","sap_id":"PA021","category_id":9,"subcategory_id":null,"ecommerce_enable":1,"group_id":38,"sku":"PA021","hash":"5df11baf32188","active":1,"status":"Disponible","title":"MURO GABBANA 30 X 60","description":"PASTA BLANCA, 3D, RECTIFICADA","size":"","format":"30x60","color":null,"finished":null,"unit_type":"M2","meters_box":"1.44","price":"1340.48","high_price":"0.00","price_discount":0,"price_expiration":"17-02-23","image":"pro_609567236b7ea.jpg","priority":0,"tags":"","updated_at":"2022-11-16T14:33:43.000000Z","unit":"M2","brute_weight":"14.65","net_weight":"14.51","net_weight_unit":"KG","volume":"0.00","volume_unit":"","searchtext":"MURO GABBANA 30 X 60 PA021 ","discount":"0","imageFront":"https:\/\/tendenzza.mx\/\/files\/products\/193-5df11baf32188\/pro_60d6109111b37.jpg","priceFront":"$ 1,340.48 MXN","titleFront":"Muro gabbana 30 x 60","categorySlug":"muro","family":4,"link":"https:\/\/tendenzza.it\/productos\/4\/muro-gabbana-30-x-60","category":{"id":9,"slug":"muro","title":"Muro","description":"","active":1,"image":null,"priority":8,"tags":"","imageFront":"https:\/\/tendenzza.mx\/files\/categories\/"},"families":[{"id":4,"title":"Muros","description":"","image":"https:\/\/tendenzza.mx\/files\/families\/family_6141af80eaacd.jpg","tags":"Muro,Azulejo,Moderno,Pared","active":1,"status":"Activo","priority":7,"created_by_user_id":1,"updated_by_user_id":231,"deleted_by_user_id":null,"created_at":"2021-05-04T16:18:26.000000Z","updated_at":"2021-09-15T09:34:44.000000Z","deleted_at":null,"pivot":{"product_id":193,"family_id":4}}]},{"id":196,"slug":"muro-stefano-30-x-60","sap_id":"PA023","category_id":9,"subcategory_id":null,"ecommerce_enable":1,"group_id":38,"sku":"PA023","hash":"5df11baf96a87","active":1,"status":"Disponible","title":"MURO  STEFANO 30 X 60","description":"PASTA BLANCA, RECTIFICADA","size":"","format":"30x60","color":null,"finished":null,"unit_type":"M2","meters_box":"0.90","price":"0.00","high_price":"0.00","price_discount":0,"price_expiration":"17-02-23","image":"pro_60afd52490e01.jpg","priority":0,"tags":"","updated_at":"2022-11-16T14:33:43.000000Z","unit":"M2","brute_weight":"16.11","net_weight":"15.89","net_weight_unit":"KG","volume":"0.00","volume_unit":"","searchtext":"MURO  STEFANO 30 X 60 PA023 ","discount":"0","imageFront":"https:\/\/tendenzza.mx\/\/files\/products\/196-5df11baf96a87\/pro_60afd525e4752.jpg","priceFront":"$ 0.00 MXN","titleFront":"Muro  stefano 30 x 60","categorySlug":"muro","family":4,"link":"https:\/\/tendenzza.it\/productos\/4\/muro-stefano-30-x-60","category":{"id":9,"slug":"muro","title":"Muro","description":"","active":1,"image":null,"priority":8,"tags":"","imageFront":"https:\/\/tendenzza.mx\/files\/categories\/"},"families":[{"id":4,"title":"Muros","description":"","image":"https:\/\/tendenzza.mx\/files\/families\/family_6141af80eaacd.jpg","tags":"Muro,Azulejo,Moderno,Pared","active":1,"status":"Activo","priority":7,"created_by_user_id":1,"updated_by_user_id":231,"deleted_by_user_id":null,"created_at":"2021-05-04T16:18:26.000000Z","updated_at":"2021-09-15T09:34:44.000000Z","deleted_at":null,"pivot":{"product_id":196,"family_id":4}}]},{"id":194,"slug":"muro-dante-30-x-60","sap_id":"PA024","category_id":9,"subcategory_id":null,"ecommerce_enable":1,"group_id":38,"sku":"PA024","hash":"5df11baf53016","active":1,"status":"Disponible","title":"MURO  DANTE 30 X 60","description":"PASTA BLANCA, CON RELIEVE, RECTIFICADA","size":"","format":"30x60","color":null,"finished":null,"unit_type":"M2","meters_box":"1.44","price":"0.00","high_price":"0.00","price_discount":0,"price_expiration":"17-02-23","image":"pro_609567339c8e3.jpg","priority":0,"tags":"","updated_at":"2022-11-16T14:33:43.000000Z","unit":"M2","brute_weight":"15.76","net_weight":"15.69","net_weight_unit":"KG","volume":"0.00","volume_unit":"","searchtext":"MURO  DANTE 30 X 60 PA024 ","discount":"0","imageFront":"https:\/\/tendenzza.mx\/\/files\/products\/194-5df11baf53016\/pro_60d61162516d8.jpg","priceFront":"$ 0.00 MXN","titleFront":"Muro  dante 30 x 60","categorySlug":"muro","family":4,"link":"https:\/\/tendenzza.it\/productos\/4\/muro-dante-30-x-60","category":{"id":9,"slug":"muro","title":"Muro","description":"","active":1,"image":null,"priority":8,"tags":"","imageFront":"https:\/\/tendenzza.mx\/files\/categories\/"},"families":[{"id":4,"title":"Muros","description":"","image":"https:\/\/tendenzza.mx\/files\/families\/family_6141af80eaacd.jpg","tags":"Muro,Azulejo,Moderno,Pared","active":1,"status":"Activo","priority":7,"created_by_user_id":1,"updated_by_user_id":231,"deleted_by_user_id":null,"created_at":"2021-05-04T16:18:26.000000Z","updated_at":"2021-09-15T09:34:44.000000Z","deleted_at":null,"pivot":{"product_id":194,"family_id":4}}]},{"id":145,"slug":"muro-calcata-30-x-60","sap_id":"PA122","category_id":9,"subcategory_id":null,"ecommerce_enable":1,"group_id":38,"sku":"PA122","hash":"5df11ba73cbcc","active":1,"status":"Disponible","title":"MURO CALCATA 30 X 60","description":"PASTA BLANCA, 3D, RECTIFICADA","size":"","format":"30x60","color":null,"finished":null,"unit_type":"M2","meters_box":"1.44","price":"0.00","high_price":"0.00","price_discount":0,"price_expiration":"17-02-23","image":"pro_60afd53854085.jpg","priority":0,"tags":"Azulejo","updated_at":"2022-11-16T14:33:45.000000Z","unit":"M2","brute_weight":"14.93","net_weight":"14.79","net_weight_unit":"KG","volume":"0.00","volume_unit":"","searchtext":"MURO CALCATA 30 X 60 PA122 Azulejo","discount":"0","imageFront":"https:\/\/tendenzza.mx\/\/files\/products\/145-5df11ba73cbcc\/pro_60afd53ab66a3.jpg","priceFront":"$ 0.00 MXN","titleFront":"Muro calcata 30 x 60","categorySlug":"muro","family":4,"link":"https:\/\/tendenzza.it\/productos\/4\/muro-calcata-30-x-60","category":{"id":9,"slug":"muro","title":"Muro","description":"","active":1,"image":null,"priority":8,"tags":"","imageFront":"https:\/\/tendenzza.mx\/files\/categories\/"},"families":[{"id":4,"title":"Muros","description":"","image":"https:\/\/tendenzza.mx\/files\/families\/family_6141af80eaacd.jpg","tags":"Muro,Azulejo,Moderno,Pared","active":1,"status":"Activo","priority":7,"created_by_user_id":1,"updated_by_user_id":231,"deleted_by_user_id":null,"created_at":"2021-05-04T16:18:26.000000Z","updated_at":"2021-09-15T09:34:44.000000Z","deleted_at":null,"pivot":{"product_id":145,"family_id":4}}]}]' :routes='{"page_products_details":"https:\/\/tendenzza.it\/productos\/1\/product_slug"}'>
+        </catalog-component>
+       </div>
+       <footer class="main-footer relative py-12 overflow-hiden">
+        <img alt="" class="absolute t-0 r-0 h-100 hidden lg:block" src="/assets/images/layout/footer-decore.svg"/>
+        <div class="container container--tendenzza-ecommerce">
+         <div class="gs:grid mb-14 md:mb-0">
+          <div class="col flex flex-column justify-between mb-10 lg:mb-0">
+           <div class="gs:grid mb-10 lg:mb-0">
+            <div class="md:col-9 xxl:px-3">
+             <a class="block w-fit mb-12 md:mb-25 xxl:mb-27" href="/">
+              <img alt="" class="footer-logo" src="/assets/images/layout/logo-tendenzza-white.svg"/>
+             </a>
+             <div class="hidden md:block">
+              <div class="wrapper-icons-social-media flex flex-wrap">
+               <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://www.instagram.com/tendenzza_italia/" target="_blank">
+                <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-ig.svg" width="16px"/>
+               </a>
+               <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://api.whatsapp.com/send?phone=5213327031631&amp;text=%C2%A1Hola!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n." target="_blank">
+                <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-wa.svg" width="16px"/>
+               </a>
+               <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://www.facebook.com/tendenzza.it/" target="_blank">
+                <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-fbk-circle.svg" width="16px"/>
+               </a>
+               <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://www.youtube.com/channel/UCDqOrrO6HZkQi_1uCEUnoqg" target="_blank">
+                <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-youtube.svg" width="17px"/>
+               </a>
+               <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://www.pinterest.com.mx/tendenzzaitalia/" target="_blank">
+                <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-pinterest.svg" width="18px"/>
+               </a>
+               <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://www.linkedin.com/company/tendenzza-italia" target="_blank">
+                <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-linkedin.svg" width="14px"/>
+               </a>
+              </div>
+             </div>
+            </div>
+            <div class="col-12 md:col ml-a xl:ml-0">
+             <p class="footer-nav-title">
+              Catálogo
+             </p>
+             <ul class="footer-nav-list spacing-0 bullet-none tx-12 mb-8">
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="https://tendenzza.it/productos/6">
+                Pisos
+               </a>
+              </li>
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="https://tendenzza.it/productos/4">
+                Muros
+               </a>
+              </li>
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="https://tendenzza.it/productos/2">
+                Mallas
+               </a>
+              </li>
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="https://tendenzza.it/productos/1">
+                Lavabos
+               </a>
+              </li>
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="https://tendenzza.it/productos/7">
+                Sanitarios
+               </a>
+              </li>
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="https://tendenzza.it/productos/8">
+                Refacciones
+               </a>
+              </li>
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="">
+                Descuentos
+               </a>
+              </li>
+             </ul>
+             <p class="footer-nav-title">
+              Legales
+             </p>
+             <ul class="footer-nav-list spacing-0 bullet-none tx-12 mb-8">
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="/avisos-de-privacidad" target="_blank">
+                Aviso de privacidad
+               </a>
+              </li>
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="/terminos-legales" target="_blank">
+                Términos legales
+               </a>
+              </li>
+             </ul>
+            </div>
+            <div class="col-12 md:col">
+             <p class="footer-nav-title">
+              Acerca
+             </p>
+             <ul class="footer-nav-list spacing-0 bullet-none tx-12 mb-8">
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="/nosotros">
+                Nosotros
+               </a>
+              </li>
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="/assets/docs/catalogo.pdf" target="_blank">
+                Descarga el catálogo
+               </a>
+              </li>
+              <li class="footer-nav-item">
+               <a class="footer-nav-link hover:tx-underline" href="/assets/docs/guia_instalacion.pdf" target="_blank">
+                Guía de instalación
+               </a>
+              </li>
+             </ul>
+             <div class="item hidden lg:block">
+              <p class="ff-helvetica-neue-co tx-14 tx-white tx-uppercase md:mb-6">
+               <img alt="" class="mr-3 -mt-1" src="/assets/images/helpers/icon-pin-map-white.svg" width="11px"/>
+               ITALIA
+              </p>
+              <p class="tx-12 line-h-loose m-0" style="color: #8D8D8D;">
+               Vía castracani No.2
+               <br/>
+               CP 455042, Forte, dei Marmi LU, Italia
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="gs:grid">
+            <div class="col">
+             <a class="tx-14 md:tx-16 xxl:tx-20 w-fit tx-white" href="tel:+523338970014">
+              <img alt="" class="mr-2 -mt-1" src="/assets/images/helpers/icon-telephone-white.svg" width="16px"/>
+              +52 33 38970014
+             </a>
+             <span class="tx-11px inline-block mb-0 sm:ml-8 mt-3 sm:mt-0" style="color: #8D8D8D;">
+              Todos los Derechos Reservados, Tendenzza 2018 ®
+             </span>
+            </div>
+           </div>
+          </div>
+          <div class="lg:col-9">
+           <div class="locations-grid">
+            <div class="item">
+             <p class="ff-helvetica-neue-co tx-14 tx-white tx-uppercase md:mb-6">
+              <img alt="" class="mr-3 -mt-1" src="/assets/images/helpers/icon-pin-map-white.svg" width="11px"/>
+              GUADALAJARA
+             </p>
+             <p class="tx-12 line-h-loose m-0" style="color: #8D8D8D;">
+              Camino San Ángel #1100-A
+              <br/>
+              Col. Tesistán, C.P.45200 Zapopan, Jalisco.
+              <br/>
+              <strong>
+               Teléfono:
+              </strong>
+              +52 (33) 3897 0014
+             </p>
+            </div>
+            <div class="item">
+             <p class="ff-helvetica-neue-co tx-14 tx-white tx-uppercase md:mb-6">
+              <img alt="" class="mr-3 -mt-1" src="/assets/images/helpers/icon-pin-map-white.svg" width="11px"/>
+              GDL SHOWROOM
+             </p>
+             <p class="tx-12 line-h-loose m-0" style="color: #8D8D8D;">
+              Mariano Otero #407
+              <br/>
+              Col. Moderna, Guadalajara Jal, Frente la Glorieta Niños Heroes.
+              <br/>
+              <strong>
+               Teléfono:
+              </strong>
+              +52 (33) 3647 8208
+             </p>
+            </div>
+            <div class="item">
+             <p class="ff-helvetica-neue-co tx-14 tx-white tx-uppercase md:mb-6">
+              <img alt="" class="mr-3 -mt-1" src="/assets/images/helpers/icon-pin-map-white.svg" width="11px"/>
+              CDMX
+             </p>
+             <p class="tx-12 line-h-loose m-0" style="color: #8D8D8D;">
+              Benito Juarez #1
+              <br/>
+              Col. Urbana Ixhuatepec, C.P. 55349 Ecatepec de Morelos, Edo. de México
+              <br/>
+              <strong>
+               Teléfono:
+              </strong>
+              (55) 5701 5780
+             </p>
+            </div>
+            <div class="item">
+             <p class="ff-helvetica-neue-co tx-14 tx-white tx-uppercase md:mb-6">
+              <img alt="" class="mr-3 -mt-1" src="/assets/images/helpers/icon-pin-map-white.svg" width="11px"/>
+              MONTERREY
+             </p>
+             <p class="tx-12 line-h-loose m-0" style="color: #8D8D8D;">
+              San Javier #701.
+              <br/>
+              Col. Misión San Pablo, CP. 66643 Apodaca, Nuevo León
+              <br/>
+              <strong>
+               Teléfono:
+              </strong>
+              +52 (81) 1088 0536
+             </p>
+            </div>
+            <div class="item hidden lg:block">
+            </div>
+            <div class="item lg:hidden">
+             <p class="ff-helvetica-neue-co tx-14 tx-white tx-uppercase md:mb-6">
+              <img alt="" class="mr-3 -mt-1" src="/assets/images/helpers/icon-pin-map-white.svg" width="11px"/>
+              ITALIA
+             </p>
+             <p class="tx-12 line-h-loose m-0" style="color: #8D8D8D;">
+              Vía castracani No.2
+              <br/>
+              CP 455042, Forte, dei Marmi LU, Italia
+             </p>
+            </div>
+            <div class="item flex align-end">
+             <div class="flex flex-none">
+              <img alt="ícono mastercard" class="mr-5" src="/assets/images/helpers/pay_methods/icon-mastercard-white.svg" width="37px"/>
+              <img alt="ícono mastercard" class="mr-5" src="/assets/images/helpers/pay_methods/icon-visa-white.svg" width="44px"/>
+              <img alt="ícono mastercard" src="/assets/images/helpers/pay_methods/icon-american-express-white.svg" width="28px"/>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="md:hidden">
+          <div class="wrapper-icons-social-media flex flex-wrap">
+           <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://www.instagram.com/tendenzza_italia/" target="_blank">
+            <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-ig.svg" width="16px"/>
+           </a>
+           <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://api.whatsapp.com/send?phone=5213327031631&amp;text=%C2%A1Hola!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n." target="_blank">
+            <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-wa.svg" width="16px"/>
+           </a>
+           <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://www.facebook.com/tendenzza.it/" target="_blank">
+            <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-fbk-circle.svg" width="16px"/>
+           </a>
+           <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://www.youtube.com/channel/UCDqOrrO6HZkQi_1uCEUnoqg" target="_blank">
+            <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-youtube.svg" width="17px"/>
+           </a>
+           <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://www.pinterest.com.mx/tendenzzaitalia/" target="_blank">
+            <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-pinterest.svg" width="18px"/>
+           </a>
+           <a class="social-media-case flex justify-center align-center rounded-16 w-fit mr-5 mb-4" href="https://www.linkedin.com/company/tendenzza-italia" target="_blank">
+            <img alt="" class="social-media-icon" src="/assets/images/helpers/social_media/icon-linkedin.svg" width="14px"/>
+           </a>
+          </div>
+         </div>
+        </div>
+       </footer>
+      </div>
+     </div>
+    </template>
+   </render-site-component>
+  </div>
+  <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9v-mGvK0y_FDUf3ag9gNbVJ0yW91Ojoc&amp;libraries=places">
+  </script>
+  <script src="/js/app.js?id=1c649a88aefea350a3b8">
+  </script>
+  <script src="/assets/js/wow-1.1.2/wow.min.js">
+  </script>
+  <script>
+   wow = new WOW(
+            {
+                boxClass:     'wow',      // default
+                animateClass: 'animated', // default
+                offset:       0,          // default
+                mobile:       false,       // default
+                live:         true        // default
+            }
+        )
+        wow.init();
+  </script>
+ </body>
+</html>
